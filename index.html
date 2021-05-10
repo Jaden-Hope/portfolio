@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaden Hope Portfolio</title>
+</head>
+<style>
+    .flex {
+        display: flex;
+    }
+
+    .nameTitle {
+        margin: auto 0 auto 30px;
+        text-decoration: underline overline green;
+        margin: auto;
+    }
+
+    .selfImg {
+        margin: 10px 10px 10px 10px ;
+    }
+
+    .header {
+        border: solid 3px green;
+        border-radius: 10px;
+        font-family: 'Courier New', Courier, monospace;
+        overflow: auto;
+    }
+
+    .tab {
+        overflow: hidden;
+        border: 3px solid green;
+        border-radius: 10px;
+        background-color: #f1f1f1;
+    }
+
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+    }
+
+    .tab button:hover {
+        background-color: lightgreen;
+    }
+
+    .tab button.active {
+        background-color: green;
+    }
+
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: solid 3px green;
+        border-radius: 10px;
+        border-top: none;
+        animation: fadeEffect 1s;
+    }
+
+    @keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @media(min-width:800px) {
+        .selfImg {
+            width: 340px;
+        }
+
+        .nameTitle {
+            font-size: xx-large;
+        }
+    }
+</style>
+<body style="background-color: rgb(239, 239, 239);">
+    <div class="containerAll">
+        <div class="header flex" >
+            <div><img class="selfImg flex" src="./insertImage.png"></div>
+            <div class="nameTitle flex"><h1>Jaden Hope</h1></div>
+        </div>
+        <br>
+        <div class="content">
+           <!-- Setting tab links -->
+            <div class="tab">
+                <button class="tabLinks" onclick="openTab(event, 'About')" id="defaultOpen">About</button>
+                <button class="tabLinks" onclick="openTab(event, 'Front-end')">Front-end</button>
+                <button class="tabLinks" onclick="openTab(event, 'Back-end')">Back-end</button>
+            </div>
+            <!-- Setting tab content -->
+            <div id="About" class="tabcontent" >
+                <h3>About me:</h3>
+                <p>sample text sample text sample text sample text sample text sample text sample text
+                 sample text sample text sample text sample text sample text sample text</p>
+            </div>
+            <div id="Front-end" class="tabcontent">
+                <h3>Front-end projects:</h3>
+                <p>sample text sample text sample text sample text sample text sample text sample text
+                 sample text sample text sample text sample text sample text sample text</p>
+            </div>
+            <div id="Back-end" class="tabcontent">
+                <h3>Back-end projects:</h3>
+                <p>sample text sample text sample text sample text sample text sample text sample text
+                 sample text sample text sample text sample text sample text sample text</p>
+            </div>
+            <script>
+                function openTab(evt, tabName){
+                    var tabcontent, tabLinks, tabDisplay;
+
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    tabLinks = document.getElementsByClassName("tabLinks");
+                    tabDisplay = document.getElementById(tabName);
+
+                    // Hide all elements of "tabcontent"
+                    for (var i=0; i<tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+
+                    for (var i=0; i<tabLinks.length; i++) {
+                        tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+                    }
+
+                    tabDisplay.style.display="block";
+                    evt.currentTarget.className += " active";
+                    
+                }
+
+                document.getElementById("defaultOpen").click();
+            </script>
+        </div>
+    </div>
+</body>
+</html>

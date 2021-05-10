@@ -43,6 +43,7 @@
         cursor: pointer;
         padding: 14px 16px;
         transition: 0.3s;
+        width: 33.33%;
     }
 
     .tab button:hover {
@@ -60,6 +61,10 @@
         border-radius: 10px;
         border-top: none;
         animation: fadeEffect 1s;
+    }
+
+    .tabStyle {
+        text-decoration: underline green;
     }
 
     @keyframes fadeEffect {
@@ -93,19 +98,24 @@
             </div>
             <!-- Setting tab content -->
             <div id="About" class="tabcontent" >
-                <h3>About me:</h3>
-                <p>sample text sample text sample text sample text sample text sample text sample text
-                 sample text sample text sample text sample text sample text sample text</p>
+                <h3 class="tabStyle">About me:</h3>
+                <p>My name is Jaden Hope, I was born in 2002 in Empangeni. I've loved technology since a very young age and found an interest in coding very early on in my life.
+                     The first time I started properly coding was in 10th Grade, when I took it as a subject at my High School. I play a lot of video games in my spare time and read a lot of books.
+                </p>
+                <p>All my work can be found on my <span><a href="https://github.com/ArgentCrafter">Github</a></span>.</p>
+                <p>A link to my online CV can be found <a href="">here</a>.</p>
             </div>
             <div id="Front-end" class="tabcontent">
-                <h3>Front-end projects:</h3>
-                <p>sample text sample text sample text sample text sample text sample text sample text
-                 sample text sample text sample text sample text sample text sample text</p>
+                <h3 class="tabStyle">Front-end projects:</h3>
+                <h4>DOM-intro project:</h4>
+                <p>My project covering Front-end development using DOM can be found <span><a href="https://argentcrafter.github.io/dom-intro/">here</a></span>.</p>
+                <h4>Bootcamp unit tests:</h4>
+                <p>My project covering the unit testing of the functions I created during bootcamp can be found <span><a href="https://argentcrafter.github.io/bootcamp-tests/">here</a></span>.</p>
             </div>
             <div id="Back-end" class="tabcontent">
-                <h3>Back-end projects:</h3>
-                <p>sample text sample text sample text sample text sample text sample text sample text
-                 sample text sample text sample text sample text sample text sample text</p>
+                <h3 class="tabStyle">Back-end projects:</h3>
+                <h4>Basic Websites:</h4>
+                <p>My project covering basic website creation can be found <span><a href="https://argentcrafter.github.io/basic-websites/">here</a></span>.</p>
             </div>
             <script>
                 function openTab(evt, tabName){
@@ -125,10 +135,8 @@
                     }
 
                     tabDisplay.style.display="block";
-                    evt.currentTarget.className += " active";
-                    
+                    evt.currentTarget.className += " active";   
                 }
-
                 document.getElementById("defaultOpen").click();
             </script>
         </div>
